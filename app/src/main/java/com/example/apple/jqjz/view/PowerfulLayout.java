@@ -10,6 +10,7 @@ import android.widget.FrameLayout;
 
 import com.nineoldandroids.view.ViewHelper;
 
+
 /**
  * Created by apple on 17/4/8.
  */
@@ -182,6 +183,7 @@ public class PowerfulLayout extends FrameLayout{
             }
             // 缩放view
             if (scale > 0.5) {
+
                 ViewHelper.setScaleX(PowerfulLayout.this, scale);// x方向上缩放
                 ViewHelper.setScaleY(PowerfulLayout.this, scale);// y方向上缩放
             }
