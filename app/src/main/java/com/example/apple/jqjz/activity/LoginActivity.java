@@ -63,7 +63,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void logxUtils(String name, String password) {
-        String path = "http://10.3.231.139:8080" + "/helloweb/LogLet";
+        String path = "http://192.168.1.102:8080" + "/helloweb/LogLet";
         path=path+"?name="+name+"&password="+password;
         HttpUtils httpUtils = new HttpUtils();
         httpUtils.send(HttpRequest.HttpMethod.GET, path, new RequestCallBack<String>() {

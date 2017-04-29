@@ -5,4 +5,6 @@
     <color name="colorAccent">#FF4081</color>
     <color name="bgblue">#E31EAFF1</color>
     <color name="btnblue">#1EAFF1</color>
+    <color name="light_blue">#5CACEE</color>
+    <color name="white">#FFFFFFFF</color>
 </resources>

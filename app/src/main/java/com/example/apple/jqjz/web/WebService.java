@@ -12,7 +12,7 @@ import java.net.URL;
  * Created by apple on 16/12/4.
  */
 public class WebService {
-    private  static  String IP="10.3.231.139:8080";
+    private  static  String IP="192.168.1.102:8080";
     //通过Get方式获取Http服务器数据
     public static  String executeHttpGet(String name,String password) throws Exception {
         Log.d("sun","开始网络连接-------");

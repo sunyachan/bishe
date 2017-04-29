@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bitmap_book_read_chapterlist_repeat">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp">
+        <ImageView
+            android:id="@+id/iv_lc"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:src="@drawable/ys"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/iv_lc"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_vertical"
+            android:text="工艺流程"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+
+            />
+
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/tv_lc_fy"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textColor="@drawable/tv_color"
+        android:text="反应岗位工艺流程"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="2.0dp"
+        android:src="@drawable/biz_pc_account_line"/>
+    <TextView
+        android:id="@+id/tv_lc_fl"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textColor="@drawable/tv_color"
+        android:text="分馏岗位工艺流程"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="2.0dp"
+        android:src="@drawable/biz_pc_account_line"/>
+
+</LinearLayout>

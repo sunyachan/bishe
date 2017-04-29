@@ -40,7 +40,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View view) {
         String name=rg_name.getText().toString();
         String password=rg_password.getText().toString();
-        String url="http://10.3.231.139:8080/helloweb/RegLet";
+        String url="http://192.168.1.102:8080/helloweb/RegLet";
         HttpUtils httpUtils = new HttpUtils();
         RequestParams params = new RequestParams();
         params.addBodyParameter("name",name);
