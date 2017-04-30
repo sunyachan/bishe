@@ -1,7 +1,11 @@
 package com.example.apple.jqjz.activity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,15 +21,13 @@ import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class DBActivity extends AppCompatActivity {
-    TextView text;
+//    TextView text;
     ListView lv;
     JQdb jqdb;
-    List<String> list1;
-    List<String> list2;
+    String[] str1;
+    String[] str2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,14 +39,12 @@ public class DBActivity extends AppCompatActivity {
     }
 
     private void init() {
-        text= (TextView) findViewById(R.id.db_cs);
+//        text= (TextView) findViewById(R.id.db_cs);
         lv= (ListView) findViewById(R.id.db_lv);
-        list1=new ArrayList<String>(){
-
-        };
-        list2=new ArrayList<String>(){
-
-        };
+        str1=new String[]{"PI201","TI201","TIC202","PI211","TI208","PI207","PI208",
+                "TIC203","PI202","LIC202","PI206","TIC201","PI212","PIC101","PI106"};
+        str2=new String[]{"Pa","℃","℃","MPa","℃","Mpa","Mpa","℃","Mpa",
+                "%","MPa","℃","MPa","MPa","MPa"};
     }
 //网络连接。查询数据
     public void QueryDb() {
@@ -59,7 +59,7 @@ public class DBActivity extends AppCompatActivity {
                 String json=responseInfo.result;
                 parseJson(json);
                 //刷新UI界面
-                text.setText(jqdb.toString());
+                showUI();
             }
 
             @Override
@@ -69,11 +69,62 @@ public class DBActivity extends AppCompatActivity {
         });
 
     }
-//解析Json数据
+//    ListView填充
+    private void showUI() {
+        lv.setAdapter(new MyAdapter(getApplicationContext()));
+    }
+
+    //解析Json数据
     private void parseJson(String json) {
         jqdb=new JQdb();
         Gson gson = new Gson();
         jqdb=gson.fromJson(json, JQdb.class);
 
+    }
+    class  MyAdapter extends BaseAdapter{
+        private Context context;
+
+        public MyAdapter(Context context) {
+            this.context = context;
+        }
+
+        @Override
+        public int getCount() {
+            return str1.length;
+        }
+
+        @Override
+        public Object getItem(int i) {
+            return null;
+        }
+
+        @Override
+        public long getItemId(int i) {
+            return 0;
+        }
+
+        @Override
+        public View getView(int i, View view, ViewGroup viewGroup) {
+            ViewHolder holder;
+            if (view==null){
+                holder=new ViewHolder();
+                view=getLayoutInflater().inflate(R.layout.db_lv_item,null);
+                holder.tv1= (TextView) view.findViewById(R.id.db_item_name);
+                holder.tv2= (TextView) view.findViewById(R.id.db_item_value);
+                holder.tv3= (TextView) view.findViewById(R.id.db_item_nuit);
+                view.setTag(holder);
+            }else {
+                holder= (ViewHolder) view.getTag();
+            }
+            holder.tv1.setText(str1[i]);
+            holder.tv2.setText(jqdb.get(i));
+            holder.tv3.setText(str2[i]);
+            return view;
+        }
+    }
+    static class  ViewHolder{
+        public TextView tv1;
+        public TextView tv2;
+        public TextView tv3;
     }
 }

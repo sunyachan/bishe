@@ -3,16 +3,20 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="10dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
     android:layout_centerVertical="true"
     >
 
     <TextView
+        android:id="@+id/db_item_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="17dp"
         android:text="PI201"
         />
     <TextView
+        android:id="@+id/db_item_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="PI201"
@@ -20,6 +24,7 @@
         android:layout_centerHorizontal="true"
         />
     <TextView
+        android:id="@+id/db_item_nuit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="17dp"
