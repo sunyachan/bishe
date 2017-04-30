@@ -83,7 +83,9 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
                // Toast.makeText(getApplicationContext(),"监测画面",Toast.LENGTH_LONG).show();
                 break;
             case 1:
-                Toast.makeText(getApplicationContext(),"数据查询",Toast.LENGTH_LONG).show();
+                Intent intent3 = new Intent(getApplication(), DBActivity.class);
+                startActivity(intent3);
+//                Toast.makeText(getApplicationContext(),"数据查询",Toast.LENGTH_LONG).show();
                 break;
             case 2:
                 Intent intent1 = new Intent(MenuActivity.this, LCActivity.class);

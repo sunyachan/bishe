@@ -35,6 +35,7 @@
             android:name=".activity.JCActivity"
             android:screenOrientation="landscape" />
         <activity android:name=".activity.SetActivity" />
+        <activity android:name=".activity.DBActivity"></activity>
     </application>
 
 </manifest>
