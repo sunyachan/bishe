@@ -13,7 +13,6 @@ import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.apple.jqjz.R;
 import com.example.apple.jqjz.bean.GVItem;
@@ -63,7 +62,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.ib_set:
                 Intent intent = new Intent(getApplicationContext(), SetActivity.class);
                 startActivity(intent);
-                Toast.makeText(getApplicationContext(),"点击设置按钮",Toast.LENGTH_LONG).show();
+//                Toast.makeText(getApplicationContext(),"点击设置按钮",Toast.LENGTH_LONG).show();
                 break;
             default:
                 break;
