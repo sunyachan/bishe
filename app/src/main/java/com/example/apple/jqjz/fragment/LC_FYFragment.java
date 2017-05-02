@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.apple.jqjz.R;
+import com.example.apple.jqjz.util.Util;
 
 /**
  * Created by apple on 17/1/1.
@@ -20,7 +21,7 @@ public class LC_FYFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.pager_hd, null);
         TextView tv= (TextView) view.findViewById(R.id.tv_hd);
-        tv.setText("反应岗位工艺流程");
+        tv.setText(Util.LC_1);
         return view;
     }
 }
