@@ -100,9 +100,11 @@ public class SetActivity extends AppCompatActivity implements View.OnClickListen
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (false){
-            Intent intent = new Intent(getApplicationContext(), MyService.class);
+        Intent intent = new Intent(getApplicationContext(), MyService.class);
+        if (sivReceive.isToggleOn()){
             startService(intent);
+        }else{
+            stopService(intent);
         }
     }
 }

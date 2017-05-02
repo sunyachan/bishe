@@ -1,12 +1,18 @@
 package com.example.apple.jqjz.service;
 
 import android.app.ActivityManager;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.os.IBinder;
+import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
+import com.example.apple.jqjz.R;
+import com.example.apple.jqjz.activity.DBActivity;
 import com.example.apple.jqjz.activity.SetActivity;
 
 import java.util.List;
@@ -15,7 +21,8 @@ public class MyService extends Service {
 
     public Context context;
     public Boolean isBack;
-
+    NotificationManager mNotificationManager;
+    NotificationCompat.Builder mBuilder;
 
 
     public MyService() {
@@ -55,9 +62,11 @@ public class MyService extends Service {
 //                    判断App是否在后台运行
                     isBack=isAppIsInBackground(context);
                     if (isBack){
-                        Log.i("sun","该App运行于后台");
+                        //显示通知栏信息
+                        showMsg();
+//                        Log.i("sun","该App运行于后台");
                     }else {
-                        Log.i("sun","该App运行于前台");
+//                        Log.i("sun","该App运行于前台");
                     }
                 }
             }).start();
@@ -67,6 +76,25 @@ public class MyService extends Service {
                 e.printStackTrace();
             }
         }
+    }
+
+    private void showMsg() {
+        mNotificationManager= (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        mBuilder=new NotificationCompat.Builder(context);
+        Intent intent = new Intent(context, DBActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        PendingIntent pendingIntent = PendingIntent.getActivity(context, 1, intent,
+                PendingIntent.FLAG_UPDATE_CURRENT);
+        mBuilder.setAutoCancel(true)
+                .setTicker("加氢精制数据异常")
+                .setContentTitle("数据异常")
+                .setContentText("加氢精制数据异常，点击查看详情")
+                .setSmallIcon(R.drawable.ys)
+                .setPriority(Notification.PRIORITY_MAX)
+                .setContentIntent(pendingIntent);
+        mNotificationManager.notify(1,mBuilder.build());
+
+
     }
 
 
