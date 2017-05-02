@@ -12,16 +12,17 @@ import com.example.apple.jqjz.R;
 import com.example.apple.jqjz.util.Util;
 
 /**
- * Created by apple on 17/1/1.
+ * Created by apple on 17/5/2.
  */
 
-public class LC_FLFragment extends Fragment {
+public class RLFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.pager_hd,null);
-        TextView textView= (TextView) view.findViewById(R.id.tv_hd);
-        textView.setText(Util.LC_2);
+        TextView tv= (TextView) view.findViewById(R.id.tv_hd);
+        tv.setText(Util.COM_9);
         return view;
     }
 }
+

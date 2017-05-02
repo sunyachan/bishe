@@ -9,18 +9,21 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.apple.jqjz.R;
+import com.example.apple.jqjz.util.Util;
 
 /**
  * Created by apple on 16/12/31.
  */
 
 public class LGPLFragment extends Fragment {
+    public static TextView tv;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.pager_hd,null);
-        TextView tv= (TextView) view.findViewById(R.id.tv_hd);
-        tv.setText("分馏炉炉管破裂");
+        tv= (TextView) view.findViewById(R.id.tv_hd);
+        tv.setText(Util.COM_1);
         return view;
     }
 }

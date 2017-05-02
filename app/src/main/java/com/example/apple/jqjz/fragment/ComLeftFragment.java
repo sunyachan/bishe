@@ -12,7 +12,6 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.apple.jqjz.MainActivity;
 import com.example.apple.jqjz.R;
 import com.example.apple.jqjz.activity.ComActivity;
 
@@ -57,6 +56,38 @@ public class ComLeftFragment extends Fragment implements AdapterView.OnItemClick
                 newFragment=new LGPLFragment();
                 title="分馏炉炉管破裂";
                 break;
+            case 2:
+                newFragment=new TYBFFragment();
+                title="停仪表风";
+                break;
+            case 3:
+                newFragment=new FLTFragment();
+                title="分馏塔塔底油泵泄漏着火";
+                break;
+            case 4:
+                newFragment=new TXHSFragment();
+                title="停循环水";
+                break;
+            case 5:
+                newFragment=new FLT2Fragment();
+                title="分馏塔人孔法兰泄漏";
+                break;
+            case 6:
+                newFragment=new YLFragment();
+                title="原料油罐着火";
+                break;
+            case 7:
+                newFragment=new DCSFragment();
+                title="DCS系统停电";
+                break;
+            case 8:
+                newFragment=new FYFragment();
+                title="反应器顶部法兰泄漏着火";
+                break;
+            case 9:
+                newFragment=new RLFragment();
+                title="燃料气中断";
+                break;
         }
         if (newFragment!=null){
             //切换Fragment
@@ -77,7 +108,8 @@ public class ComLeftFragment extends Fragment implements AdapterView.OnItemClick
 
     class MyAdapter extends BaseAdapter{
 
-        String[] data=new String[]{"装置晃电","分馏炉炉管破裂","停仪表风","分馏塔塔底油泵泄漏着火","停循环水"};
+        String[] data=new String[]{"装置晃电","分馏炉炉管破裂","停仪表风","分馏塔塔底油泵泄漏着火","停循环水",
+        "分馏塔人孔法兰泄漏","原料油罐着火"," DCS系统停电","反应器顶部法兰泄漏着火","燃料气中断"};
 
         private Context context;
         public MyAdapter(Context context)
